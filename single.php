@@ -24,16 +24,35 @@ get_header(); ?>
 
 					get_template_part( 'template-parts/content', get_post_format() );
 
-					the_post_navigation();
+					// the_post_navigation();
+					?>
 
+			<div class="row">	
+
+			<div class="col-6 text-left">
+			<?php
+
+			previous_post_link('%link', 'Previous');
+			?>
+			</div>
+			<div class="col-6 text-right">
+			<?php
+
+			next_post_link('%link', 'Next');
+			?>
+			</div>
+
+			</div>
+			<?php
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();
 					endif;
 
 				endwhile; // End of the loop.
-				?>
 
+?>
+		
 				</main><!-- #main -->
 			</div><!-- #primary -->
 

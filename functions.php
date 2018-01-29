@@ -194,3 +194,13 @@ class Social_media_widget extends WP_Widget {
     register_widget( 'Social_media_widget' );
 }
 add_action( 'widgets_init', 'register_social_media_widget' );
+
+
+/*Numeric Pagination*/
+
+function hcl_numeric_posts_nav() {
+	ob_start();
+	include('inc/pagination.php');
+	$strrr= ob_get_clean();
+	echo $strrr;
+}
